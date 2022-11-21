@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+<body>
+    <a href="https://www.youtube.com/watch?v=FVlSjitljSg&list=RDFVlSjitljSg&start_radio=1" title="">сылка</a><br>
+    <a href="https://www.youtube.com/watch?v=RRwaCUbn5Lc" title="">сылка</a>
+    <script>
+                var elems = document.getElementsByTagName('a');
+        for (var i = 0; i < elems.length; i++) {
+            elems[i].addEventListener('mouseover', func);
+        }
+        function func() {
+            this.innerHTML = this.innerHTML + ' (' + this.href + ')';
+        }
+    </script>
+</body>
+</html>

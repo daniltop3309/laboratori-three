@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul class="task">
+        <li class="task">1</li>
+        <li class="task">2</li>
+        <li class="task">3</li>
+    </ul>
+    <button class="btn">нажми на меня</button>
+    <script>
+        const getUl = document.querySelector('.task');
+        const getBtn = document.querySelector('.btn');
+
+        getUl.addEventListener('click', func1);
+        getBtn.addEventListener('click', func);
+
+        function func1(event) {
+            event.target.innerHTML = `${event.target.innerHTML} !`;
+        };
+
+        function func() {
+            const createLi = document.createElement('li');
+            createLi.innerHTML = '+';
+            getUl.appendChild(createLi);
+        };
+    </script>
+</body>
+</html>

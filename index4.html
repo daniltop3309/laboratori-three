@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <select name="sel" id="" class="sel">
+        <option value="1" class="opt">Россия</option>
+        <option value="2" class="opt">Америка</option>
+        <option value="3" class="opt">Франция</option>
+    </select>
+    <p class="div"></p>
+    <script>
+        const sity = {
+            0: ['Бавлы', 'Набрежные Челны', 'Елабуга'],
+            1: ['Нью-Йорк', 'Чикаго', 'Бостон'],
+            2: ['Париж', 'Прованс', 'Марсель']
+        };
+        const getSelect = document.querySelector('.sel');
+        const getDivt = document.querySelector('.div');
+
+        getSelect.addEventListener('change', func);
+
+        function func() {
+            getDivt.innerHTML = '';
+            const getSity = sity[getSelect.selectedIndex];
+
+            const makeSelect = document.createElement('select');
+
+            for (let i = 0; i < getSity.length; i += 1) {
+                const makeOption = document.createElement('option');
+                makeOption.innerHTML = getSity[i];
+                makeSelect.appendChild(makeOption);
+            }
+
+            getDivt.appendChild(makeSelect);
+        };
+    </script>
+</body>
+</html>
